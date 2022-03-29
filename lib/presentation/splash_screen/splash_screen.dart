@@ -6,6 +6,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -13,6 +15,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           Image.asset(
             "assets/splash_screen_image.png",
+            width: size.width * 0.95,
           ),
           GestureDetector(
             onTap: () {
@@ -23,8 +26,8 @@ class SplashScreen extends StatelessWidget {
                   ));
             },
             child: Container(
-              height: 75.0,
-              width: 300.0,
+              height: size.height * 0.10,
+              width: size.width * 0.85,
               decoration: const BoxDecoration(
                 color: Color(0xffFFA451),
                 borderRadius: BorderRadius.only(
@@ -32,11 +35,11 @@ class SplashScreen extends StatelessWidget {
                   bottomRight: Radius.circular(25.0),
                 ),
               ),
-              child: const Center(
+              child: Center(
                   child: Text(
                 "Fruit Hub",
                 style: TextStyle(
-                  fontSize: 50.0,
+                  fontSize: size.height * 0.05,
                 ),
               )),
             ),
